@@ -1,52 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min-darkly.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="css/bootstrap.min-journal.css">
 </head>
+
 <body>
+  <div class="container bg-info text-center my-2">
     <h1>Curso de Nodejs</h1>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class="container bg-body-tertiary">
-        <!-- Content here -->
-        <table class="table bg-body-primary">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Correo</th>
-              </tr>
-            </thead>
-            <tbody>
-                <% if(data){ %>
-                  <% data.forEach((result)=> { %>
-                <tr>
-                  <td><%= result.id_autor %></td>
-                  <td><%= result.autor_nombre %></td>
-                  <td><%= result.autor_apellido %></td>
-                  <td><%= result.autor_correo %></td>
-                </tr> 
-                <%  }); };%>
-              </tbody>
-          </table>       
+  </div>
+  <div class="container bg-primary">
+    <nav class="navbar navbar-expand-lg">
+      <div class="navbar-nav">
+        <a class="nav-link active bg-warning" aria-current="page" href="/">Home</a>
+        <a class="nav-link" href="/contacto">Contacto</a>
+        <a class="nav-link" href="/galeria">Galeria</a>
+        <a class="nav-link" href="/nosotros">Nosotros</a>
       </div>
+    </nav>
+
+  </div>
+  <div class="container">
+    <!-- Content here -->
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xl-8">
+        <table class="table table-striped table-warning">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Correo</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if(data){ %>
+              <% data.forEach((result)=> { %>
+                <tr>
+                  <td>
+                    <%= result.id_autor %>
+                  </td>
+                  <td>
+                    <%= result.autor_nombre %>
+                  </td>
+                  <td>
+                    <%= result.autor_apellido %>
+                  </td>
+                  <td>
+                    <%= result.autor_correo %>
+                  </td>
+                  <td>
+                    <form method="post" action="/eliminar">
+                      <button type="submit" class="btn btn-secondary">Eliminar</button>
+                    </form>
+                    <form method="post" action="/modificar">
+                      <button type="submit" class="btn btn-danger">Actualizar</button>
+                    </form>
+                    
+                    
+                  </td>
+                </tr>
+                <% }); };%>
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </div>
 </body>
+
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="css/bootstrap.min-journal.css">
+</head>
+<body>
+    <h1>Contacto</h1>
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="navbar-nav">
+           <a class="nav-link active" aria-current="page" href="/">Home</a>
+           <a class="nav-link" href="/contacto">Contacto</a>
+           <a class="nav-link" href="/galeria">Galeria</a>
+           <a class="nav-link" href="/nosotros">Nosotros</a>
+         </div>
+   </nav>
+
+    <div class="container bg-info py-4">
+        <form action="/guardar" method="post">
+            <div class="mb-3">
+                <form-group>
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </form-group>
+            </div>
+            <div class="mb-3">
+                <form-group>
+                    <label for="Apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                </form-group>                
+            </div>
+            <div class="mb-3">
+                <button type="button" class="btn btn-warning">Cancelar</button>
+                <button type="submit" class="btn btn-danger">Guardar</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

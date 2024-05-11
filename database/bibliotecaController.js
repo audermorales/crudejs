@@ -21,4 +21,11 @@ controller.getListarAutor=(req,res)=>{
     }
 }
 
+controller.eliminarAutor=(req,res)=>{
+
+}
+controller.modificarAutor=(req,res)=>{
+}
+
+
 module.exports= controller;
